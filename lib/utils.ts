@@ -14,9 +14,10 @@ export function generatePaletteUrl(colors: string[]) {
 }
 
 export function parseUrlColors(url: string): string[] {
-  const params = new URLSearchParams(url.split("?")[1]);
+  const queryString = url.split("?")[1];
+  const params = queryString ? new URLSearchParams(queryString) : new URLSearchParams();
   const colors: string[] = [];
-  for (const [key, value] of params.entries()) {
+  for (const [key, value] of Array.from(params.entries())) {
     if (key.startsWith("c")) {
       colors.push(`#${value}`);
     }
