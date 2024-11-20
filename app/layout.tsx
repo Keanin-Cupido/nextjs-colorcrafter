@@ -10,6 +10,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "ColorCrafter - Professional Color Palette Generator",
   description: "Create beautiful and accessible color palettes for your next project",
+  icons: {
+    icon: "/logo.svg",
+  },
 };
 
 export default function RootLayout({
